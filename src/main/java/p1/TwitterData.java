@@ -54,13 +54,14 @@ public class TwitterData
 
 //	    boolean createdAt = node.has("created_at");
 	    
-	    // Users that talk about Covid
+	    // Tweets that contains "Covid", "covid"
 	    boolean hasText = 
 			    node.has("text") && 
 			    (node.get("text").asText().contains("Covid") ||
 			    node.get("text").asText().contains("covid"));
 	    
-/*	    boolean hasLoc =
+/*	Uncomment this section if you cater data in twitter by country   
+ *      boolean hasLoc =
 	    		node.has("user") &&
 	    		node.get("user").has("location") &&
 	    		node.get("user").has("lang") &&
@@ -75,12 +76,14 @@ public class TwitterData
 	    				node.get("user").get("location").asText().contains("India") ||
 	    				node.get("user").get("location").asText().contains("Italy") ||
 	    				node.get("user").get("location").asText().contains("Turkey") ||
-	    				node.get("user").get("location").asText().contains("Spain"));
-	    */
+	    				node.get("user").get("location").asText().contains("Spain");
+*/
+	    //To identify English words tweets
 	    boolean isEnglish =
 	    		node.has("lang") &&
 	    		node.get("lang").asText().equals("en");
 	    
+	    //Strings that are unnecessary or inappropriate to exclude
 	    String[] excl = {"shit", "fuck", "fucking"," a "," an "," The "," rt ","RT"," for "," at "," that "," is "," this "," with "," we "," We ",
 	    		" didnt "," know "," gave "," that "," That "," been "," there "," those "," from "," by "," to "," has "," have "," so "," her "," his ",
 	    		" Hey "," its "," Im "," of "," the "," all "," A "," An "," for "," it "," It "," My "," my "," they "," and "," I "," you "," me ",
