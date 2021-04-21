@@ -1,5 +1,3 @@
-Disclaimer THIS PROJECT IS FOR STUDY PURPOSES ONLY
-
 This project's purpose is to analyze which English words or topics are commonly used on Tweets about Covid by getting data on Twitter using Twitter API and Apache Flink then output to file.
 
 The code works but has a lot to improve i.e Add Kafka Integration. Will modify when not busy.
